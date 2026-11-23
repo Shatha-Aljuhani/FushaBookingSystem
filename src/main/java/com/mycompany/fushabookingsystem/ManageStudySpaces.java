@@ -41,7 +41,7 @@ public class ManageStudySpaces extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(48, 59, 145));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("إدارة أماكن المذاكرة والحجوزات");
+        jLabel1.setText("لوحة التحكم الرئيسية");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

@@ -77,7 +77,7 @@
               <Font name="Segoe UI" size="28" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&#x625;&#x62f;&#x627;&#x631;&#x629; &#x623;&#x645;&#x627;&#x643;&#x646; &#x627;&#x644;&#x645;&#x630;&#x627;&#x643;&#x631;&#x629; &#x648;&#x627;&#x644;&#x62d;&#x62c;&#x648;&#x632;&#x627;&#x62a;"/>
+            <Property name="text" type="java.lang.String" value="&#x644;&#x648;&#x62d;&#x629; &#x627;&#x644;&#x62a;&#x62d;&#x643;&#x645; &#x627;&#x644;&#x631;&#x626;&#x64a;&#x633;&#x64a;&#x629;"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel2">
