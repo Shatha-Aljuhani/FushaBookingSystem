@@ -15,12 +15,76 @@ public class MainDashboard extends javax.swing.JFrame {
     /**
      * Creates new form MainDashboard
      */
-    public MainDashboard() {
+  public MainDashboard() {
     initComponents();
+
+    setResizable(false);
+    setupCenteredLayout();
+
     setSize(1000, 650);
     setLocationRelativeTo(null);
 }
+private void setupCenteredLayout() {
 
+    jPanel1.removeAll();
+    jPanel1.setLayout(new javax.swing.BoxLayout(
+        jPanel1, javax.swing.BoxLayout.Y_AXIS
+    ));
+
+    jPanel1.setBackground(new java.awt.Color(245, 250, 255));
+
+    jLabel3.setAlignmentX(CENTER_ALIGNMENT);
+    jLabel1.setAlignmentX(CENTER_ALIGNMENT);
+    jLabel2.setAlignmentX(CENTER_ALIGNMENT);
+    
+    // ترتيب الأزرار في عمودين
+    javax.swing.JPanel buttonsPanel = new javax.swing.JPanel(
+        new java.awt.GridLayout(3, 2, 28, 22)
+    );
+
+    buttonsPanel.setBackground(new java.awt.Color(245, 250, 255));
+    buttonsPanel.setMaximumSize(new java.awt.Dimension(430, 230));
+    buttonsPanel.setPreferredSize(new java.awt.Dimension(430, 230));
+
+    buttonsPanel.add(btnManageSpaces);
+    buttonsPanel.add(btnNewReservation);
+
+    buttonsPanel.add(btnViewReservations);
+    buttonsPanel.add(btnEditReservation);
+
+    buttonsPanel.add(btnCancelReservation);
+    buttonsPanel.add(btnReservationReport);
+
+    buttonsPanel.setAlignmentX(CENTER_ALIGNMENT);
+
+    // توحيد أحجام الأزرار
+    java.awt.Dimension buttonSize = new java.awt.Dimension(200, 65);
+
+    for (java.awt.Component c : buttonsPanel.getComponents()) {
+        c.setPreferredSize(buttonSize);
+    }
+
+    btnLogout.setAlignmentX(CENTER_ALIGNMENT);
+    btnLogout.setPreferredSize(new java.awt.Dimension(150, 45));
+
+    jPanel1.add(javax.swing.Box.createVerticalStrut(55));
+    jPanel1.add(jLabel3);
+
+    jPanel1.add(javax.swing.Box.createVerticalStrut(15));
+    jPanel1.add(jLabel1);
+
+    jPanel1.add(javax.swing.Box.createVerticalStrut(12));
+    jPanel1.add(jLabel2);
+
+    jPanel1.add(javax.swing.Box.createVerticalStrut(30));
+    jPanel1.add(buttonsPanel);
+
+    jPanel1.add(javax.swing.Box.createVerticalStrut(25));
+    jPanel1.add(btnLogout);
+
+    jPanel1.revalidate();
+    jPanel1.repaint();
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,6 +103,8 @@ public class MainDashboard extends javax.swing.JFrame {
         btnCancelReservation = new javax.swing.JButton();
         btnReservationReport = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("FUSHA-MainDashboard");
@@ -58,6 +124,7 @@ public class MainDashboard extends javax.swing.JFrame {
         btnNewReservation.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnNewReservation.setForeground(new java.awt.Color(255, 255, 255));
         btnNewReservation.setText("تسجيل حجز جديد");
+        btnNewReservation.addActionListener(this::btnNewReservationActionPerformed);
 
         btnViewReservations.setBackground(new java.awt.Color(32, 163, 166));
         btnViewReservations.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -86,52 +153,69 @@ public class MainDashboard extends javax.swing.JFrame {
         btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setText("تسجيل خروج");
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel2.setText("مرحبًا بك في نظام إدارة الحجوزات");
+
+        jLabel3.setText("FUSHA");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(128, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnCancelReservation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnManageSpaces, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnViewReservations, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(118, 118, 118)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnNewReservation, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                    .addComponent(btnEditReservation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnReservationReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(139, 139, 139))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(248, 248, 248)
+                .addComponent(jLabel2)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(279, 279, 279)
-                        .addComponent(btnLogout))
+                        .addGap(341, 341, 341)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(205, 205, 205)
-                        .addComponent(jLabel1)))
+                        .addGap(220, 220, 220)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(266, 266, 266)
+                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(110, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnManageSpaces)
-                    .addComponent(btnViewReservations, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(99, 99, 99)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnReservationReport, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEditReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNewReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(139, 139, 139))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(89, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
                 .addGap(56, 56, 56)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnNewReservation)
-                    .addComponent(btnManageSpaces))
-                .addGap(40, 40, 40)
+                    .addComponent(btnManageSpaces, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEditReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEditReservation)
-                    .addComponent(btnViewReservations, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(40, 40, 40)
+                    .addComponent(btnViewReservations, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNewReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelReservation)
-                    .addComponent(btnReservationReport))
+                    .addComponent(btnCancelReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReservationReport, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
-                .addComponent(btnLogout)
-                .addGap(231, 231, 231))
+                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,9 +227,8 @@ public class MainDashboard extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -158,6 +241,10 @@ public class MainDashboard extends javax.swing.JFrame {
     private void btnCancelReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelReservationActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelReservationActionPerformed
+
+    private void btnNewReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewReservationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNewReservationActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,6 +280,8 @@ public class MainDashboard extends javax.swing.JFrame {
     private javax.swing.JButton btnReservationReport;
     private javax.swing.JButton btnViewReservations;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
