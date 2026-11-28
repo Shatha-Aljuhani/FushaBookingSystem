@@ -35,22 +35,22 @@ public class StudySpacesFrame extends javax.swing.JFrame {
         btnBackHome = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jButton5 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jLabel9 = new javax.swing.JLabel();
+        btnUpdateSpace = new javax.swing.JButton();
+        btnDeleteSpace = new javax.swing.JButton();
+        btnViewSpaces = new javax.swing.JButton();
+        lblSpaceIdTitle = new javax.swing.JLabel();
+        lblSpaceType = new javax.swing.JLabel();
+        lblSpaceLocation = new javax.swing.JLabel();
+        lblSpaceCapacity = new javax.swing.JLabel();
+        lblSpaceStatus = new javax.swing.JLabel();
+        cmbSpaceType = new javax.swing.JComboBox<>();
+        cmbSpaceStatus = new javax.swing.JComboBox<>();
+        btnAddSpace = new javax.swing.JButton();
+        spStudySpaces = new javax.swing.JScrollPane();
+        tblStudySpaces = new javax.swing.JTable();
+        cmbSpaceCapacity = new javax.swing.JComboBox<>();
+        cmbSpaceLocation = new javax.swing.JComboBox<>();
+        lblSpaceId = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -108,30 +108,30 @@ public class StudySpacesFrame extends javax.swing.JFrame {
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton2.setText("تعديل المكان");
+        btnUpdateSpace.setText("تعديل المكان");
 
-        jButton3.setText("حذف الأماكن");
-        jButton3.addActionListener(this::jButton3ActionPerformed);
+        btnDeleteSpace.setText("حذف الأماكن");
+        btnDeleteSpace.addActionListener(this::btnDeleteSpaceActionPerformed);
 
-        jButton4.setText("عرض الأماكن");
+        btnViewSpaces.setText("عرض الأماكن");
 
-        jLabel4.setText("رقم المكان");
+        lblSpaceIdTitle.setText("رقم المكان");
 
-        jLabel5.setText("نوع المكان");
+        lblSpaceType.setText("نوع المكان");
 
-        jLabel6.setText("الموقع");
+        lblSpaceLocation.setText("الموقع");
 
-        jLabel7.setText("السعة");
+        lblSpaceCapacity.setText("السعة");
 
-        jLabel8.setText("الحالة");
+        lblSpaceStatus.setText("الحالة");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "مقعد فردي", "غرفة جماعية" }));
+        cmbSpaceType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "مقعد فردي", "غرفة جماعية" }));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "متاح", "خارج الخدمة" }));
+        cmbSpaceStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "متاح", "خارج الخدمة" }));
 
-        jButton5.setText("إضافة مكان");
+        btnAddSpace.setText("إضافة مكان");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblStudySpaces.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -150,13 +150,13 @@ public class StudySpacesFrame extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        spStudySpaces.setViewportView(tblStudySpaces);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "أكثر من 5" }));
+        cmbSpaceCapacity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "أكثر من 5" }));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "الدور الاول ", "الدور الثاني", "المكتبة ", "سينمار" }));
+        cmbSpaceLocation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "الدور الاول ", "الدور الثاني", "المكتبة ", "سينمار" }));
 
-        jLabel9.setText("تلقائي");
+        lblSpaceId.setText("تلقائي");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -166,66 +166,66 @@ public class StudySpacesFrame extends javax.swing.JFrame {
                 .addContainerGap(55, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cmbSpaceStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblSpaceStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblSpaceCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbSpaceCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblSpaceLocation)
+                    .addComponent(cmbSpaceLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, 0, 146, Short.MAX_VALUE)
+                    .addComponent(cmbSpaceType, 0, 146, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel5)))
+                        .addComponent(lblSpaceType)))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblSpaceIdTitle)
+                    .addComponent(lblSpaceId, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(55, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAddSpace, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(btnUpdateSpace)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(btnDeleteSpace)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(btnViewSpaces)
                 .addGap(144, 144, 144))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(spStudySpaces, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4))
+                    .addComponent(lblSpaceLocation)
+                    .addComponent(lblSpaceCapacity)
+                    .addComponent(lblSpaceStatus)
+                    .addComponent(lblSpaceType)
+                    .addComponent(lblSpaceIdTitle))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
+                    .addComponent(cmbSpaceStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbSpaceType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbSpaceCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbSpaceLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSpaceId))
                 .addGap(24, 24, 24)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2)
-                    .addComponent(jButton5))
+                    .addComponent(btnViewSpaces)
+                    .addComponent(btnDeleteSpace)
+                    .addComponent(btnUpdateSpace)
+                    .addComponent(btnAddSpace))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(spStudySpaces, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(11, Short.MAX_VALUE))
         );
 
@@ -370,9 +370,9 @@ public class StudySpacesFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnDeleteSpaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteSpaceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnDeleteSpaceActionPerformed
 
     private void btnRegisterBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterBookingActionPerformed
         // TODO add your handling code here:
@@ -408,17 +408,17 @@ public class StudySpacesFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddSpace;
     private javax.swing.JButton btnBackHome;
+    private javax.swing.JButton btnDeleteSpace;
     private javax.swing.JButton btnRegisterBooking;
+    private javax.swing.JButton btnUpdateSpace;
+    private javax.swing.JButton btnViewSpaces;
     private javax.swing.JComboBox<String> cmbBookingSpace;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> cmbSpaceCapacity;
+    private javax.swing.JComboBox<String> cmbSpaceLocation;
+    private javax.swing.JComboBox<String> cmbSpaceStatus;
+    private javax.swing.JComboBox<String> cmbSpaceType;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -427,20 +427,20 @@ public class StudySpacesFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JLabel lblSpaceCapacity;
+    private javax.swing.JLabel lblSpaceId;
+    private javax.swing.JLabel lblSpaceIdTitle;
+    private javax.swing.JLabel lblSpaceLocation;
+    private javax.swing.JLabel lblSpaceStatus;
+    private javax.swing.JLabel lblSpaceType;
+    private javax.swing.JScrollPane spStudySpaces;
+    private javax.swing.JTable tblStudySpaces;
     private javax.swing.JTextField txtBookingDate;
     private javax.swing.JTextField txtStartTime;
     private javax.swing.JTextField txtStudentId;
