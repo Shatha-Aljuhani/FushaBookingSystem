@@ -15,76 +15,10 @@ public class MainDashboard extends javax.swing.JFrame {
     /**
      * Creates new form MainDashboard
      */
-  public MainDashboard() {
-    initComponents();
-
-    setResizable(false);
-    setupCenteredLayout();
-
-    setSize(1000, 650);
-    setLocationRelativeTo(null);
-}
-private void setupCenteredLayout() {
-
-    jPanel1.removeAll();
-    jPanel1.setLayout(new javax.swing.BoxLayout(
-        jPanel1, javax.swing.BoxLayout.Y_AXIS
-    ));
-
-    jPanel1.setBackground(new java.awt.Color(245, 250, 255));
-
-    jLabel3.setAlignmentX(CENTER_ALIGNMENT);
-    jLabel1.setAlignmentX(CENTER_ALIGNMENT);
-    jLabel2.setAlignmentX(CENTER_ALIGNMENT);
-    
-    // ترتيب الأزرار في عمودين
-    javax.swing.JPanel buttonsPanel = new javax.swing.JPanel(
-        new java.awt.GridLayout(3, 2, 28, 22)
-    );
-
-    buttonsPanel.setBackground(new java.awt.Color(245, 250, 255));
-    buttonsPanel.setMaximumSize(new java.awt.Dimension(430, 230));
-    buttonsPanel.setPreferredSize(new java.awt.Dimension(430, 230));
-
-    buttonsPanel.add(btnManageSpaces);
-    buttonsPanel.add(btnNewReservation);
-
-    buttonsPanel.add(btnViewReservations);
-    buttonsPanel.add(btnEditReservation);
-
-    buttonsPanel.add(btnCancelReservation);
-    buttonsPanel.add(btnReservationReport);
-
-    buttonsPanel.setAlignmentX(CENTER_ALIGNMENT);
-
-    // توحيد أحجام الأزرار
-    java.awt.Dimension buttonSize = new java.awt.Dimension(200, 65);
-
-    for (java.awt.Component c : buttonsPanel.getComponents()) {
-        c.setPreferredSize(buttonSize);
+    public MainDashboard() {
+        initComponents();
     }
 
-    btnLogout.setAlignmentX(CENTER_ALIGNMENT);
-    btnLogout.setPreferredSize(new java.awt.Dimension(150, 45));
-
-    jPanel1.add(javax.swing.Box.createVerticalStrut(55));
-    jPanel1.add(jLabel3);
-
-    jPanel1.add(javax.swing.Box.createVerticalStrut(15));
-    jPanel1.add(jLabel1);
-
-    jPanel1.add(javax.swing.Box.createVerticalStrut(12));
-    jPanel1.add(jLabel2);
-
-    jPanel1.add(javax.swing.Box.createVerticalStrut(30));
-    jPanel1.add(buttonsPanel);
-
-    jPanel1.add(javax.swing.Box.createVerticalStrut(25));
-    jPanel1.add(btnLogout);
-
-    jPanel1.revalidate();
-    jPanel1.repaint();
-}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -94,139 +28,296 @@ private void setupCenteredLayout() {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        headerPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btnManageSpaces = new javax.swing.JButton();
-        btnNewReservation = new javax.swing.JButton();
-        btnViewReservations = new javax.swing.JButton();
-        btnEditReservation = new javax.swing.JButton();
-        btnCancelReservation = new javax.swing.JButton();
-        btnReservationReport = new javax.swing.JButton();
-        btnLogout = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        lblWelcome = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        cardManageSpaces = new javax.swing.JPanel();
+        lblManageSpaces = new javax.swing.JLabel();
+        lblManageSpacesDesc = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        lblNewBooking = new javax.swing.JLabel();
+        lblNewBookingDesc = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        cardManageBookings = new javax.swing.JPanel();
+        lblManageBookings = new javax.swing.JLabel();
+        lblManageBookingsDesc = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        cardReports = new javax.swing.JPanel();
+        lblReports = new javax.swing.JLabel();
+        lblReportsDesc = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("FUSHA-MainDashboard");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("FUSHA - Dashboard");
 
-        jPanel1.setBackground(new java.awt.Color(245, 250, 255));
+        headerPanel.setBackground(new java.awt.Color(48, 68, 125));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(48, 59, 145));
-        jLabel1.setText("لوحة التحكم الرئيسية");
+        jLabel1.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("FUSHA");
 
-        btnManageSpaces.setBackground(new java.awt.Color(32, 163, 166));
-        btnManageSpaces.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnManageSpaces.setForeground(new java.awt.Color(255, 255, 255));
-        btnManageSpaces.setText("إدارة أماكن المذاكرة");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("لوحة التحكم");
 
-        btnNewReservation.setBackground(new java.awt.Color(32, 163, 166));
-        btnNewReservation.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnNewReservation.setForeground(new java.awt.Color(255, 255, 255));
-        btnNewReservation.setText("تسجيل حجز جديد");
-        btnNewReservation.addActionListener(this::btnNewReservationActionPerformed);
+        javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
+        headerPanel.setLayout(headerPanelLayout);
+        headerPanelLayout.setHorizontalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(54, 54, 54))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(74, 74, 74))))
+        );
+        headerPanelLayout.setVerticalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerPanelLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
 
-        btnViewReservations.setBackground(new java.awt.Color(32, 163, 166));
-        btnViewReservations.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnViewReservations.setForeground(new java.awt.Color(255, 255, 255));
-        btnViewReservations.setText("عرض الحجوزات");
+        lblWelcome.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
+        lblWelcome.setForeground(new java.awt.Color(0, 51, 102));
+        lblWelcome.setText("مرحبًا بك في نظام فُسحة لإدارة الحجوزات ");
 
-        btnEditReservation.setBackground(new java.awt.Color(32, 163, 166));
-        btnEditReservation.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnEditReservation.setForeground(new java.awt.Color(255, 255, 255));
-        btnEditReservation.setText("تعديل الحجز");
-        btnEditReservation.addActionListener(this::btnEditReservationActionPerformed);
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setText("نظامك الذكي لتنظيم وإدارة اماكن المذاكرة والحجوزات");
 
-        btnCancelReservation.setBackground(new java.awt.Color(32, 163, 166));
-        btnCancelReservation.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnCancelReservation.setForeground(new java.awt.Color(255, 255, 255));
-        btnCancelReservation.setText("إلغاء الحجز");
-        btnCancelReservation.addActionListener(this::btnCancelReservationActionPerformed);
+        cardManageSpaces.setBackground(new java.awt.Color(0, 102, 153));
 
-        btnReservationReport.setBackground(new java.awt.Color(32, 163, 166));
-        btnReservationReport.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnReservationReport.setForeground(new java.awt.Color(255, 255, 255));
-        btnReservationReport.setText("تقرير الحجوزات");
+        lblManageSpaces.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblManageSpaces.setForeground(new java.awt.Color(255, 255, 255));
+        lblManageSpaces.setText("إدارة اماكن المذاكرة");
 
-        btnLogout.setBackground(new java.awt.Color(75, 85, 165));
-        btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        btnLogout.setForeground(new java.awt.Color(255, 255, 255));
-        btnLogout.setText("تسجيل خروج");
+        lblManageSpacesDesc.setForeground(new java.awt.Color(255, 255, 255));
+        lblManageSpacesDesc.setText("إضافة وتعديل وحذف اماكن المذاكرة");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel2.setText("مرحبًا بك في نظام إدارة الحجوزات");
+        jButton3.setText("اضغط هنا");
 
-        jLabel3.setText("FUSHA");
+        javax.swing.GroupLayout cardManageSpacesLayout = new javax.swing.GroupLayout(cardManageSpaces);
+        cardManageSpaces.setLayout(cardManageSpacesLayout);
+        cardManageSpacesLayout.setHorizontalGroup(
+            cardManageSpacesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardManageSpacesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(cardManageSpacesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardManageSpacesLayout.createSequentialGroup()
+                        .addGroup(cardManageSpacesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblManageSpaces, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblManageSpacesDesc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardManageSpacesLayout.createSequentialGroup()
+                        .addComponent(jButton3)
+                        .addGap(15, 15, 15))))
+        );
+        cardManageSpacesLayout.setVerticalGroup(
+            cardManageSpacesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardManageSpacesLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(lblManageSpaces)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblManageSpacesDesc)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel3.setForeground(new java.awt.Color(0, 102, 102));
+
+        lblNewBooking.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblNewBooking.setForeground(new java.awt.Color(255, 255, 255));
+        lblNewBooking.setText("تسجيل حجز جديد");
+
+        lblNewBookingDesc.setForeground(new java.awt.Color(255, 255, 255));
+        lblNewBookingDesc.setText("إنشاء حجز جديد للطالبة وتحديد المكان والوقت");
+
+        jButton4.setText("اضغط هنا");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(52, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(lblNewBooking)
+                        .addGap(12, 12, 12))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jButton4)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(lblNewBookingDesc)
+                        .addContainerGap())))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(lblNewBooking)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNewBookingDesc)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton4)
+                .addContainerGap())
+        );
+
+        cardManageBookings.setBackground(new java.awt.Color(0, 102, 102));
+
+        lblManageBookings.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblManageBookings.setForeground(new java.awt.Color(255, 255, 255));
+        lblManageBookings.setText("إدارة الحجوزات");
+
+        lblManageBookingsDesc.setForeground(new java.awt.Color(255, 255, 255));
+        lblManageBookingsDesc.setText("البحث عن الحجوزات ومراجعتها وتعديلها أو إلغاؤها");
+
+        jButton1.setText("اضغط هنا");
+
+        javax.swing.GroupLayout cardManageBookingsLayout = new javax.swing.GroupLayout(cardManageBookings);
+        cardManageBookings.setLayout(cardManageBookingsLayout);
+        cardManageBookingsLayout.setHorizontalGroup(
+            cardManageBookingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardManageBookingsLayout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addGroup(cardManageBookingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardManageBookingsLayout.createSequentialGroup()
+                        .addGroup(cardManageBookingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblManageBookingsDesc, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblManageBookings, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardManageBookingsLayout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(19, 19, 19))))
+        );
+        cardManageBookingsLayout.setVerticalGroup(
+            cardManageBookingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardManageBookingsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblManageBookings)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblManageBookingsDesc)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        cardReports.setBackground(new java.awt.Color(0, 102, 153));
+
+        lblReports.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblReports.setForeground(new java.awt.Color(255, 255, 255));
+        lblReports.setText("تقارير الحجوزات");
+
+        lblReportsDesc.setForeground(new java.awt.Color(255, 255, 255));
+        lblReportsDesc.setText("عرض إحصائيات الحجوزات وتحليل استخدام أماكن المذاكرة");
+
+        jButton2.setText("اضغط هنا");
+
+        javax.swing.GroupLayout cardReportsLayout = new javax.swing.GroupLayout(cardReports);
+        cardReports.setLayout(cardReportsLayout);
+        cardReportsLayout.setHorizontalGroup(
+            cardReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardReportsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(cardReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardReportsLayout.createSequentialGroup()
+                        .addGroup(cardReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblReports, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblReportsDesc, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardReportsLayout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addGap(16, 16, 16))))
+        );
+        cardReportsLayout.setVerticalGroup(
+            cardReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardReportsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblReports)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblReportsDesc)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
+                .addContainerGap(8, Short.MAX_VALUE))
+        );
+
+        jButton5.setText("تسجيل خروج");
+        jButton5.addActionListener(this::jButton5ActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(128, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnCancelReservation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnManageSpaces, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnViewReservations, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(118, 118, 118)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnNewReservation, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                    .addComponent(btnEditReservation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnReservationReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(139, 139, 139))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(248, 248, 248)
-                .addComponent(jLabel2)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(97, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(341, 341, 341)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(220, 220, 220)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(266, 266, 266)
-                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cardManageSpaces, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cardReports, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cardManageBookings, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(47, 47, 47))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(296, 296, 296))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(197, 197, 197))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblWelcome)
+                        .addGap(182, 182, 182))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(56, 56, 56)
-                .addComponent(jLabel1)
+                .addGap(21, 21, 21)
+                .addComponent(lblWelcome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnManageSpaces, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEditReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnViewReservations, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNewReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnReservationReport, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(90, 90, 90))
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cardManageBookings, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cardManageSpaces, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cardReports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(headerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addComponent(headerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -234,17 +325,9 @@ private void setupCenteredLayout() {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnEditReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditReservationActionPerformed
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditReservationActionPerformed
-
-    private void btnCancelReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelReservationActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCancelReservationActionPerformed
-
-    private void btnNewReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewReservationActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnNewReservationActionPerformed
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,16 +355,28 @@ private void setupCenteredLayout() {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelReservation;
-    private javax.swing.JButton btnEditReservation;
-    private javax.swing.JButton btnLogout;
-    private javax.swing.JButton btnManageSpaces;
-    private javax.swing.JButton btnNewReservation;
-    private javax.swing.JButton btnReservationReport;
-    private javax.swing.JButton btnViewReservations;
+    private javax.swing.JPanel cardManageBookings;
+    private javax.swing.JPanel cardManageSpaces;
+    private javax.swing.JPanel cardReports;
+    private javax.swing.JPanel headerPanel;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lblManageBookings;
+    private javax.swing.JLabel lblManageBookingsDesc;
+    private javax.swing.JLabel lblManageSpaces;
+    private javax.swing.JLabel lblManageSpacesDesc;
+    private javax.swing.JLabel lblNewBooking;
+    private javax.swing.JLabel lblNewBookingDesc;
+    private javax.swing.JLabel lblReports;
+    private javax.swing.JLabel lblReportsDesc;
+    private javax.swing.JLabel lblWelcome;
     // End of variables declaration//GEN-END:variables
 }
